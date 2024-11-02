@@ -1,0 +1,11 @@
+{%extends 'base.html'%}  
+
+{% block content%}
+    {{tasks.tast_name}}
+    {{tasks.task_description}}
+    {{tasks.task_status}}
+    
+        <a href="{% url 'update' tasks.id %}"><button >Edit</button></a>
+        <a href="{% url 'delete' tasks.id %}" class='button'>Delete</a>
+      
+{%endblock content%}
