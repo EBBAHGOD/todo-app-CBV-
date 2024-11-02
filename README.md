@@ -1,4 +1,4 @@
-#To-do App
+# To-do App
 A simple to do app built using django Classed Based Views to enhance code organization and resuse
 
 ## Features
