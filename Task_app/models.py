@@ -6,7 +6,7 @@ class Task_list(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     task_name=models.CharField(max_length=100,null=False,blank=False)
     task_description=models.TextField(blank=True,null=True)
-    task_status=models.BooleanField(default=False)
+    completed=models.BooleanField(default=False)
     task_date=models.DateTimeField(auto_now_add=True)
     
 

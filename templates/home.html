@@ -39,7 +39,7 @@
 <div class="task-items-wrapper">
     {% for task in tasks %}
     <div class="item-wrapper">
-        {% if task.task_status %}
+        {% if task.completed %}
         <div class="complete_tasks">
             <div class="complete-task-icon"></div>
             <i><s><a href="{% url 'update' task.id %}">{{ task.task_name }}</a></s></i>
