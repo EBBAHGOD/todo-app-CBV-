@@ -31,7 +31,7 @@ class task_list(ListView):
         context=super().get_context_data(**kwargs)
         searched=self.request.GET.get('search_string')
         if self.request.user.is_authenticated:
-            context['count']=models.Task_list.objects.filter(user=self.request.user,task_status=False).count
+            context['count']=models.Task_list.objects.filter(user=self.request.user,completed=False).count
             context['searched']=searched
             return context
     
@@ -45,7 +45,7 @@ class detail_view(DetailView):
 class update_view(UpdateView):
     model=models.Task_list
     template_name='update_task.html'
-    fields=['task_name','task_description','task_status']
+    fields=['task_name','task_description','completed']
     success_url='/'
 
 
