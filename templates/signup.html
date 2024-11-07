@@ -7,8 +7,22 @@
 
 </div>
 
+
   <div class="card-body">
     <form method="POST">
+      <div>
+        {% for error in form.password1.errors %}
+        <p style="color: red;">{{ error }}</p>
+        {%endfor%}
+        {% for error in form.username.errors %}
+        <p style="color: red;">{{ error }}</p>
+      {% endfor %}
+      {% for error in form.password2.errors %}
+      <p style="color: red;">{{ error }}</p>
+      {% endfor %}
+      
+      </div>
+      
     {%csrf_token%}
     <label>{{form.username.label}}</label>
     {{form.username}}
@@ -21,6 +35,7 @@
 
     <input type="submit" class="button">
     </form>
+
 
 <P>Already have an account <a href="{% url 'login' %}">Login</a></P>
     </div>
